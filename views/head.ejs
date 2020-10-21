@@ -1,0 +1,72 @@
+<head>
+  <title>Hugo Prueba</title>
+  <!--meta tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Hugo - Prueba" />
+  <link rel="icon" href="./views/images/icon.png" />
+  <script>
+    addEventListener(
+      "load",
+      function () {
+        setTimeout(hideURLbar, 0);
+      },
+      false
+    );
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+  <link
+    href="./views/css/bootstrap.min.css"
+    rel="stylesheet"
+    type="text/css"
+    media="all"
+  />
+  <link
+    href="./views/css/bootstrap-datepicker.min.css"
+    rel="stylesheet"
+    type="text/css"
+    media="all"
+  />
+  <link
+    href="./views/css/style.css"
+    rel="stylesheet"
+    type="text/css"
+    media="all"
+  />
+  <link
+    href="./views/css/bootstrap.min.css"
+    rel="stylesheet"
+    type="text/css"
+    media="all"
+  />
+  <link
+    href="./views/css/custom.css"
+    rel="stylesheet"
+    type="text/css"
+    media="all"
+  />
+  <script src="./views/js/jquery-3.4.1.slim.min.js"></script>
+  <script src="./views/js/jquery.min.js"></script>
+  <script src="./views/js/popper.min.js"></script>
+  <script src="./views/js/bootstrap.min.js"></script>
+  <script src="./views/js/fafaicons.js" crossorigin="anonymous"></script>
+  <script
+    src="./views/js/bootstrap-datepicker.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script type="text/javascript">
+    //Verifica la session - variables globales
+    var userGlb = JSON.parse(sessionStorage.getItem("user"));
+    var sessionGlb = sessionStorage.getItem("session");
+    var tokenGlb = sessionStorage.getItem("token");
+    var paisGlb = sessionStorage.getItem("idPais");
+    if (sessionGlb == null || sessionGlb == "null") sessionGlb = false;
+    console.log(sessionGlb);
+    console.log(userGlb);
+    console.log(tokenGlb);
+    console.log(paisGlb);
+  </script>
+</head>

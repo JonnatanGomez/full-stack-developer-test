@@ -1,0 +1,12 @@
+.DS_Store
+
+models/database.js
+
+.history/*
+
+# npm
+*.log
+*.gz
+/package.json
+/package-lock.json
+/node_modules/*
