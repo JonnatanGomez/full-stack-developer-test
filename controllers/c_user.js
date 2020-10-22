@@ -6,7 +6,7 @@ var config = require("../configs/config");
 
 //constantes
 var objReq = { cd: null, message: null, qa_content: null, status: null };
-
+var paramsGlb = {};
 var columns = {
   user: {
     ws: "user",
@@ -27,7 +27,6 @@ var columns = {
 };
 var columnsShow = {
   user: { as: "user" },
-  pass: { as: "pass" },
 };
 var columnsWhere = {
   user: { required: true, as: "user", type: "STRING", where: "=" },
@@ -50,7 +49,7 @@ exports.get = function (req, res) {
   if (data.user != null && data.pass != null) {
     var user = data.user;
     var pass = data.pass;
-
+    paramsGlb = data;
     var objFind = {};
     objFind.user = user;
     objFind.pass = pass;
@@ -87,6 +86,7 @@ exports.showResult = function (res, data) {
     objReq.cd = "ok";
     objReq.message = "Login Success";
     response.token = token;
+    response.user = paramsGlb.user;
     objReq.qa_content = response;
     return res.status(200).send(objReq);
   }

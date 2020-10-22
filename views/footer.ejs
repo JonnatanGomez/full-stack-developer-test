@@ -1,4 +1,61 @@
 <!-- ##############  MODALS ################### -->
+<!-- Crear -->
+<div class="modal" id="msjModalNew" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">El vehiculo no existe, ¿Desea Crearlo?</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-group" id="ticketFrm" method="POST">
+          <div class="form-group mx-sm-3 mb-2">
+            <p>Número de Placa</p>
+            <input
+              type="text"
+              class="form-control form-control-lg"
+              id="numberCar2"
+              placeholder="NUMERO DE PLACA"
+              name="number"
+              minlength="3"
+              id="number"
+            />
+          </div>
+          <p>Tipo de Vehiculo</p>
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic"
+            id="btnsTypes"
+          ></div>
+          <hr />
+          <center>
+            <button
+              type="button"
+              class="btn btn-success btn-lg mb-2"
+              onclick="saveVehicle()"
+            >
+              Crear
+              <i class="fa fa-floppy-o"></i>
+            </button>
+          </center>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          No, Gracias
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Mensaje -->
 <div class="modal" id="msjModal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered">
@@ -56,20 +113,20 @@
   </div>
 </div>
 <!-- ##############  FOOTER ################### -->
-<footer class="bkGray" style="min-height: 250px">
+<footer class="bkLite" style="min-height: 250px">
   <div class="row">
     <div class="col-sm">
       <div class="social-icons mt-lg-4 mt-md-4 mt-3 text-center">
         <ul>
-          <li><a href="#" class="white bold">¿Necesitas ayuda?</a></li>
+          <li><a href="#" class="purple bold">¿Necesitas ayuda?</a></li>
         </ul>
       </div>
       <div class="bottem-wthree-footer pt-md-4 pt-3" style="margin-left: 10%">
-        <font class="white bold">
+        <font class="purple bold">
           <i class="fa fa-map-marker"></i> Nuestras Sedes
         </font>
         <br />
-        <font class="white" style="font-size: 12px">
+        <font class="purple" style="font-size: 12px">
           <div style="margin-left: 5%">
             Cóntactanos de lunes a viernes <br />
             de 8:00 a 17:00 horas
@@ -80,38 +137,26 @@
     <div class="col-sm">
       <div class="social-icons mt-lg-4 mt-md-4 mt-3 text-center">
         <ul>
-          <li><a href="#" class="white">Siguenos</a></li>
+          <li><a href="#" class="purple">Siguenos</a></li>
           <br /><br />
           <li>
             <a href="#"
-              ><span
-                class="fa fa-facebook iconMobile"
-                style="color: #ffffff63"
-              ></span
+              ><span class="fa fa-facebook iconMobile purple"></span
             ></a>
           </li>
           <li>
             <a href="#"
-              ><span
-                class="fa fa-twitter iconMobile"
-                style="color: #ffffff63"
-              ></span
+              ><span class="fa fa-twitter iconMobile purple"></span
             ></a>
           </li>
           <li>
             <a href="#"
-              ><span
-                class="fa fa-linkedin iconMobile"
-                style="color: #ffffff63"
-              ></span
+              ><span class="fa fa-linkedin iconMobile purple"></span
             ></a>
           </li>
           <li>
             <a href="#"
-              ><span
-                class="fa fa-envelope iconMobile"
-                style="color: #ffffff63"
-              ></span
+              ><span class="fa fa-envelope iconMobile purple"></span
             ></a>
           </li>
           <!-- <li>
@@ -128,7 +173,7 @@
     </div>
     <div class="col-sm">
       <div class="bottem-wthree-footer text-center pt-md-4 pt-3">
-        <p class="white">
+        <p class="purple">
           Creado por Jonnatan Gomez <br />
           © 2020, todos los derechos reservados
         </p>
@@ -143,6 +188,7 @@
     </div>
   </div>
 </footer>
+<script src="./views/js/custom.js"></script>
 <script type="application/javascript">
   function validateSession(data) {
     if (data.status == "tokenError" || sessionGlb == false) {
@@ -170,9 +216,7 @@
   showMenu();
   function showMenu() {
     if (sessionGlb) {
-      $("#menuSession").show();
-      $("#drop").show();
-      $("#dropBars").show();
+      $("#btnCloseSession").show();
     }
   }
 </script>

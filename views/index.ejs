@@ -3,23 +3,24 @@
   <!-- //Header -->
   <%- include('./head')-%>
   <!-- //Header -->
+  <link
+    href="./views/css/animate.css"
+    rel="stylesheet"
+    type="text/css"
+    media="all"
+  />
   <body>
     <!-- //Header -->
     <%- include('./header')-%>
     <!-- //Header -->
-
     <div class="row col">
       <div class="wrapper fadeInDown">
-        <div id="formContent" style="background: #3c195c">
+        <div id="formContent" class="bkPurple">
           <!-- Tabs Titles -->
 
           <!-- Icon -->
           <div class="fadeIn first">
-            <img
-              src="https://logodix.com/logo/1791581.gif"
-              id="icon"
-              alt="User Icon"
-            />
+            <img src="../views/images/animado1.gif" id="icon" alt="User Icon" />
             <br /><br /><br />
           </div>
 
@@ -53,53 +54,5 @@
     <!-- //Footer -->
     <%- include('./footer')-%>
     <!-- //Footer -->
-
-    <script type="application/javascript">
-      $("#loginFrm").submit(function (e) {
-        validateFrm = true;
-        e.preventDefault(); // avoid to execute the actual submit of the form.
-        var form = $(this);
-        var url = form.attr("action");
-        var dataJson = getFormData(form);
-
-        $.ajax({
-          url: "./api/user",
-          type: "GET", //el método post o get del formulario
-          data: {
-            user: dataJson.user,
-            pass: dataJson.pass,
-          },
-          beforeSend: function () {
-            loading(true);
-          },
-          error: function (data) {
-            console.log("error");
-            console.log(data);
-          },
-          success: function (data) {
-            console.log("success");
-            html = "";
-            if (data.cd != undefined && data.cd != null) {
-              if (data.cd == "ok") {
-                sessionStorage.setItem("user", JSON.stringify(data.qa_content));
-                sessionStorage.setItem("token", data.qa_content.token);
-                sessionStorage.setItem("session", true);
-                window.location.replace("./main.ejs");
-                loading(false);
-              } else {
-                $("#msjModalTitle").html("Correo o Contraseña Invalido");
-                $("#msjModalSubTitle").html(
-                  "Verifique los datos y vuelva a intentarlo"
-                );
-                $("#msjModal").modal("show");
-                loading(false);
-              }
-            }
-            $("#loginFrm").reset();
-          },
-          complete: function (data) {},
-        });
-      });
-    </script>
   </body>
 </html>
