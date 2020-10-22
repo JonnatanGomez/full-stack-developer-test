@@ -73,6 +73,7 @@ exports.get = function (req, res) {
 
 exports.showResult = function (res, data) {
   var result = data;
+  var response = {};
   if (result.qa_content[0] != null) {
     var user = result.qa_content[0];
     const payload = {
@@ -85,10 +86,13 @@ exports.showResult = function (res, data) {
 
     objReq.cd = "ok";
     objReq.message = "Login Success";
-    var response = {};
     response.token = token;
     objReq.qa_content = response;
     return res.status(200).send(objReq);
   }
+  objReq.cd = "error";
+  objReq.message = "Login invalid credentials";
+  response.token = null;
+  objReq.qa_content = response;
   return res.status(200).send(objReq);
 };

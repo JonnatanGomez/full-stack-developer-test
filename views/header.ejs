@@ -32,23 +32,37 @@
           </a>
         </h1>
       </div>
-      <label for="drop" class="toggle">
+      <label for="drop" id="dropBars" class="toggle" style="display: none">
         <i class="fa fa-bars"></i>
       </label>
-      <input type="checkbox" id="drop" />
-      <ul class="menu mt-2">
+      <input type="checkbox" id="drop" style="display: none" />
+      <ul class="menu mt-2" id="menuSession" style="display: none">
         <li
           id="homeCandiMenu"
           class="mx-lg-3 mx-md-2 my-md-0 my-1 borderBootMobile"
-          style="text-align: center; display: none"
+          style="text-align: center"
         >
-          <a href="./inicio.ejs">
+          <a href="./main.ejs">
             <i
               class="fa fa-home"
               aria-hidden="true"
-              style="font-size: 38px; color: #0072ad"
+              style="font-size: 38px; color: #38215c"
             ></i>
             <p class="azul arial" style="font-size: 15px">Inicio</p>
+          </a>
+        </li>
+        <li
+          id="homeCandiMenu"
+          class="mx-lg-3 mx-md-2 my-md-0 my-1 borderBootMobile"
+          style="text-align: center"
+        >
+          <a href="#" onclick="closeSession()">
+            <i
+              class="fa fa-sign-out"
+              aria-hidden="true"
+              style="font-size: 38px; color: #38215c"
+            ></i>
+            <p class="azul arial" style="font-size: 15px">Cerrar Sesión</p>
           </a>
         </li>
       </ul>
