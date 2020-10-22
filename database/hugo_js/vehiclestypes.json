@@ -1,0 +1,15 @@
+{
+	"_id" : ObjectId("5f908cff93927d2f02d4e5f3"),
+	"name" : "Oficiales",
+	"amount" : 0
+}
+{
+	"_id" : ObjectId("5f908cff93927d2f02d4e5f6"),
+	"name" : "Residentres",
+	"amount" : 0.05
+}
+{
+	"_id" : ObjectId("5f908cff93927d2f02d4e5f9"),
+	"name" : "Visitante",
+	"amount" : 0.5
+}
