@@ -1,0 +1,31 @@
+{
+	"_id" : ObjectId("5d685abfa3436f7ca7ba825b"),
+	"nombre" : "Guatemala",
+	"id" : "2"
+}
+{
+	"_id" : ObjectId("5d685af9a3436f7ca7ba825c"),
+	"nombre" : "El Salvador",
+	"id" : "1"
+}
+{
+	"_id" : ObjectId("5d685b0ba3436f7ca7ba825d"),
+	"nombre" : "Honduras",
+	"id" : "3"
+}
+{
+	"_id" : ObjectId("5d685b1aa3436f7ca7ba825e"),
+	"nombre" : "Nicaragua",
+	"id" : "4"
+}
+{
+	"_id" : ObjectId("5d685b2ba3436f7ca7ba825f"),
+	"nombre" : "Costa Rica",
+	"id" : "6"
+}
+{
+	"_id" : ObjectId("5d685b54a3436f7ca7ba8260"),
+	"nombre" : "Panama",
+	"id" : "5"
+}
+

@@ -1,0 +1,43 @@
+{
+	"_id" : ObjectId("5f90a74117b508a2a659dc19"),
+	"amount" : 0.05,
+	"carNumber" : "499HBZ",
+	"__v" : 0,
+	"vehicleType" : "Privado"
+}
+{
+	"_id" : ObjectId("5f90a9977df82da830652804"),
+	"amount" : 0.5,
+	"vehicleType" : "Privado",
+	"carNumber" : "324GNF",
+	"__v" : 0
+}
+{
+	"_id" : ObjectId("5f90fd299d7ff13b1c8efb37"),
+	"amount" : 0,
+	"vehicleType" : "Oficiales",
+	"carNumber" : "asdf",
+	"__v" : 0
+}
+{
+	"_id" : ObjectId("5f9104c79d7ff13b1c8efb3b"),
+	"amount" : 0.05,
+	"vehicleType" : "Residentres",
+	"carNumber" : "P71-037F",
+	"__v" : 0
+}
+{
+	"_id" : ObjectId("5f9109476e6a315e55fd93d7"),
+	"amount" : 0.05,
+	"vehicleType" : "Residentres",
+	"carNumber" : "499HVR",
+	"__v" : 0
+}
+{
+	"_id" : ObjectId("5f910a286e6a315e55fd93d8"),
+	"amount" : 0.5,
+	"vehicleType" : "Visitante",
+	"carNumber" : "499hvr",
+	"__v" : 0
+}
+

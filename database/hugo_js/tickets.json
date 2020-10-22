@@ -1,0 +1,179 @@
+{
+	"_id" : ObjectId("5f90ddcfab73b3ffb6bb6fa6"),
+	"total" : 5.5,
+	"amount" : 0.05,
+	"carNumber" : "499HBZ",
+	"vehicles" : "Privado",
+	"minutes" : 100,
+	"timeStart" : ISODate("2020-10-22T01:18:07Z"),
+	"user" : "admin",
+	"__v" : 0,
+	"timeOut" : ISODate("2020-10-22T01:21:41Z")
+}
+{
+	"_id" : ObjectId("5f90dde7ab73b3ffb6bb6fa7"),
+	"total" : 5.5,
+	"amount" : 0.05,
+	"carNumber" : "499HBZ",
+	"vehicles" : "Privado",
+	"minutes" : 100,
+	"timeStart" : ISODate("2020-10-22T01:18:31Z"),
+	"user" : "admin",
+	"__v" : 0,
+	"timeOut" : ISODate("2020-10-22T01:22:42Z")
+}
+{
+	"_id" : ObjectId("5f90deeb5fb7d2014ea18c0d"),
+	"total" : 5.5,
+	"amount" : 0.05,
+	"carNumber" : "499HBZ",
+	"vehicles" : "Privado",
+	"minutes" : 100,
+	"timeStart" : ISODate("2020-10-22T01:22:51Z"),
+	"user" : "admin",
+	"__v" : 0,
+	"timeOut" : ISODate("2020-10-22T01:23:06Z")
+}
+{
+	"_id" : ObjectId("5f90e3017a86ff0781cc3194"),
+	"total" : 0.35,
+	"amount" : 0.05,
+	"carNumber" : "499HBZ",
+	"vehicles" : "Privado",
+	"minutes" : 7,
+	"timeStart" : ISODate("2020-10-22T01:40:17Z"),
+	"user" : "admin",
+	"__v" : 0,
+	"timeOut" : ISODate("2020-10-22T01:47:23Z")
+}
+{
+	"_id" : ObjectId("5f90fd6e9d7ff13b1c8efb38"),
+	"total" : 0,
+	"amount" : 0,
+	"carNumber" : "asdf",
+	"vehicles" : "Oficiales",
+	"minutes" : 28,
+	"timeStart" : ISODate("2020-10-22T03:33:02Z"),
+	"user" : "admin",
+	"__v" : 0,
+	"timeOut" : ISODate("2020-10-22T04:00:42Z")
+}
+{
+	"_id" : ObjectId("5f9102269d7ff13b1c8efb39"),
+	"total" : 0,
+	"amount" : 0.05,
+	"carNumber" : "499HBZ",
+	"vehicles" : "Privado",
+	"minutes" : 0,
+	"timeStart" : ISODate("2020-10-22T03:53:10Z"),
+	"user" : "admin",
+	"__v" : 0,
+	"timeOut" : ISODate("2020-10-22T03:53:14Z")
+}
+{
+	"_id" : ObjectId("5f91040e9d7ff13b1c8efb3a"),
+	"total" : 0,
+	"amount" : 0,
+	"carNumber" : "asdf",
+	"vehicles" : "Oficiales",
+	"minutes" : 0,
+	"timeStart" : ISODate("2020-10-22T04:01:18Z"),
+	"user" : "admin",
+	"__v" : 0,
+	"timeOut" : ISODate("2020-10-22T04:01:33Z")
+}
+{
+	"_id" : ObjectId("5f9105329d7ff13b1c8efb3c"),
+	"total" : 0.05,
+	"amount" : 0.05,
+	"carNumber" : "P71-037F",
+	"vehicles" : "Residentres",
+	"minutes" : 1,
+	"timeStart" : ISODate("2020-10-22T04:06:10Z"),
+	"user" : "admin",
+	"__v" : 0,
+	"timeOut" : ISODate("2020-10-22T04:07:33Z")
+}
+{
+	"_id" : ObjectId("5f91061e3cc5ca55b43a57e0"),
+	"total" : 0.05,
+	"amount" : 0.05,
+	"carNumber" : "P71-037F",
+	"vehicles" : "Residentres",
+	"minutes" : 1,
+	"timeStart" : ISODate("2020-10-22T04:10:06Z"),
+	"user" : "admin",
+	"__v" : 0,
+	"timeOut" : ISODate("2020-10-22T04:11:19Z")
+}
+{
+	"_id" : ObjectId("5f91067d3cc5ca55b43a57e1"),
+	"total" : 0.05,
+	"amount" : 0.05,
+	"carNumber" : "P71-037F",
+	"vehicles" : "Residentres",
+	"minutes" : 1,
+	"timeStart" : ISODate("2020-10-22T04:11:41Z"),
+	"user" : "admin",
+	"__v" : 0,
+	"timeOut" : ISODate("2020-10-22T04:12:40Z")
+}
+{
+	"_id" : ObjectId("5f9106ca3cc5ca55b43a57e2"),
+	"total" : 0.05,
+	"amount" : 0.05,
+	"carNumber" : "P71-037F",
+	"vehicles" : "Residentres",
+	"minutes" : 1,
+	"timeStart" : ISODate("2020-10-22T04:12:58Z"),
+	"user" : "admin",
+	"__v" : 0,
+	"timeOut" : ISODate("2020-10-22T04:14:27Z")
+}
+{
+	"_id" : ObjectId("5f9107743cc5ca55b43a57e3"),
+	"total" : 0,
+	"amount" : 0.05,
+	"carNumber" : "P71-037F",
+	"vehicles" : "Residentres",
+	"minutes" : 0,
+	"timeStart" : ISODate("2020-10-22T04:15:48Z"),
+	"user" : "admin",
+	"__v" : 0,
+	"timeOut" : ISODate("2020-10-22T04:15:54Z")
+}
+{
+	"_id" : ObjectId("5f9109096e6a315e55fd93d6"),
+	"total" : 0,
+	"amount" : 0.5,
+	"carNumber" : "324GNF",
+	"vehicles" : "Privado",
+	"minutes" : 0,
+	"timeStart" : ISODate("2020-10-22T04:22:33Z"),
+	"user" : "admin",
+	"__v" : 0
+}
+{
+	"_id" : ObjectId("5f910a356e6a315e55fd93d9"),
+	"total" : 0.5,
+	"amount" : 0.5,
+	"carNumber" : "499hvr",
+	"vehicles" : "Visitante",
+	"minutes" : 1,
+	"timeStart" : ISODate("2020-10-22T04:27:33Z"),
+	"user" : "admin",
+	"__v" : 0,
+	"timeOut" : ISODate("2020-10-22T04:28:07Z")
+}
+{
+	"_id" : ObjectId("5f910a476e6a315e55fd93da"),
+	"total" : 0,
+	"amount" : 0.05,
+	"carNumber" : "499HVR",
+	"vehicles" : "Residentres",
+	"minutes" : 0,
+	"timeStart" : ISODate("2020-10-22T04:27:51Z"),
+	"user" : "admin",
+	"__v" : 0
+}
+
