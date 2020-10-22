@@ -10,99 +10,53 @@
     <!-- //Session -->
     <%- include('./prefabs/validateSession.ejs')-%>
     <!-- //Session -->
-
-    <ul class="nav nav-tabs center">
-      <li class="nav-item">
-        <a
-          data-toggle="tab"
-          class="nav-link active"
-          href="#tab1"
-          id="tab1Factura"
-          >Entrada / Salida</a
-        >
-      </li>
-      <li class="nav-item">
-        <a data-toggle="tab" class="nav-link" href="#tab2" id="tab2Factura"
-          >Acciones</a
-        >
-      </li>
-    </ul>
-
     <div class="tab-content">
       <div id="tab1" class="tab-pane fade in active show">
         <div class="margintop" id="tab1Content">
           <div class="container">
             <div class="ab-text">
               <h2 class="green center buttom">
-                REGISTRO DE ENTRADAS Y SALIDAS PLACA
+                REGISTRO DE ENTRADAS Y SALIDAS DE VEHICULOS
               </h2>
               <hr />
-              <div class="row">
-                <div class="col-12">
-                  <form class="form-inline">
-                    <div class="form-group mx-sm-3 mb-2">
-                      <input
-                        type="text"
-                        class="form-control form-control-lg"
-                        id="numberCar"
-                        placeholder="NUMERO DE PLACA"
+              <div class="row justify-content-md-center">
+                <div class="col">
+                  <div class="card">
+                    <center>
+                      <img
+                        class="card-img-top"
+                        src="../views/images/logo2.png"
+                        alt="Card logo"
+                        style="max-width: 400px"
                       />
+                    </center>
+                    <div class="card-body">
+                      <form
+                        class="form-group txtcenter"
+                        id="ticketFrm"
+                        method="POST"
+                      >
+                        <div class="form-group mx-sm-3 mb-2">
+                          <input
+                            type="text"
+                            class="form-control form-control-lg"
+                            id="numberCar"
+                            placeholder="NUMERO DE PLACA"
+                            name="number"
+                            minlength="3"
+                            id="number"
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          class="btn btn-success btn-lg mb-2"
+                        >
+                          REGISTRAR
+                          <i class="fa fa-ticket-alt"></i>
+                        </button>
+                      </form>
                     </div>
-                    <button type="button" class="btn btn-success btn-lg mb-2">
-                      <i class="fa fa-ticket-alt"></i>
-                    </button>
-                  </form>
-                </div>
-              </div>
-              <hr />
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary btn-lg mb-2">
-                  Oficiales <i class="fa fa-car-side"></i>
-                </button>
-                <button type="button" class="btn btn-primary btn-lg mb-2">
-                  Residentes <i class="fa fa-car"></i>
-                </button>
-                <button type="button" class="btn btn-primary btn-lg mb-2">
-                  Normales <i class="fa fa-car-alt"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="tab2" class="tab-pane fade">
-        <div class="margintop" id="tab1Content">
-          <div class="container">
-            <div class="ab-text">
-              <h5 class="green center buttom">Acciones</h5>
-              <div class="row">
-                <div class="col-12 buttom">
-                  <a
-                    class="col btn btn-lg btn-success white"
-                    href="./reporte.php"
-                  >
-                    Listado de Clientes
-                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12 buttom">
-                  <a class="col btn btn-lg btn-info white" href="./reporte.php">
-                    Reporte de Facturación
-                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12 buttom">
-                  <a
-                    class="col btn btn-lg btn-warning white"
-                    href="./reporte.php"
-                  >
-                    Libro de IVA
-                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -110,6 +64,199 @@
         </div>
       </div>
     </div>
+    <script type="application/javascript">
+      glbVehicleName = null;
+      glbVehicleAmount = null;
+
+      $("#ticketFrm").submit(function (e) {
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+        saveTicket();
+      });
+
+      $(document).ready(function () {
+        getTypes();
+      });
+
+      function saveTicket() {
+        var form = $(this);
+        var url = form.attr("action");
+        var dataJson = getFormData(form);
+        console.log(tokenGlb);
+        if (
+          $("#numberCar").val() === undefined ||
+          $("#numberCar").val() === null ||
+          $("#numberCar").val() === ""
+        ) {
+          $("#numberCar").focus();
+        } else {
+          $.ajax({
+            url: "./api/ticket",
+            type: "POST", //el método post o get del formulario
+            data: {
+              user: userGlb.user,
+              number: $("#numberCar").val(),
+            },
+            headers: { token: tokenGlb },
+            beforeSend: function () {
+              loading(true);
+            },
+            error: function (data) {
+              console.log("error");
+              console.log(data);
+            },
+            success: function (data) {
+              console.log(data);
+              validateSession(data);
+              if (data.cd == "ok") {
+                var result = data.qa_content;
+                if (result.timeOut === undefined || result.timeOut === null) {
+                  $("#msjModalTitle").html("<b>Ingreso</b> de Vehiculo");
+                  var timeStart = result.timeStart;
+                  var htmlSub =
+                    "Tipo: <b>" +
+                    result.vehicles +
+                    "</b><br>" +
+                    "Hora: <b>" +
+                    formatDatetime(result.timeStart) +
+                    "</br>";
+                  "</b><br>" +
+                    "Monto por Minuto: <b>" +
+                    result.amount +
+                    "</br>";
+                  $("#msjModalSubTitle").html(htmlSub);
+                } else {
+                  $("#msjModalTitle").html("<b>Egreso</b> de Vehiculo");
+                  var timeStart = result.timeStart;
+                  var htmlSub =
+                    "Tipo: <b>" +
+                    result.vehicles +
+                    "</b><br>" +
+                    "Hora de Entrada: <b>" +
+                    formatDatetime(result.timeStart) +
+                    "</b><br>" +
+                    "Hora de Salida: <b>" +
+                    formatDatetime(result.timeOut) +
+                    "</b><br>" +
+                    "Minutos: <b>" +
+                    result.minutes +
+                    "</b><br>" +
+                    "Monto por Minuto: <b>" +
+                    result.amount +
+                    "</b><br>" +
+                    "Total: <b>" +
+                    result.total +
+                    "</b><br>" +
+                    "</br>";
+                  $("#msjModalSubTitle").html(htmlSub);
+                }
+                $("#msjModal").modal("show");
+              } else {
+                $("#numberCar2").val($("#numberCar").val());
+                $("#msjModalNew").modal("show");
+              }
+            },
+            complete: function (data) {
+              loading(false);
+              glbVehicleName == null;
+              glbVehicleAmount == null;
+            },
+          });
+        }
+      }
+
+      function getTypes() {
+        $.ajax({
+          url: "./api/vehicletype",
+          type: "GET", //el método post o get del formulario
+          data: {},
+          headers: { token: tokenGlb },
+          beforeSend: function () {
+            // loading(true);
+          },
+          error: function (data) {
+            console.log("error");
+            console.log(data);
+          },
+          success: function (data) {
+            console.log("success");
+            validateSession(data);
+            var btnsTypesHtml = "";
+            for (var i = 0; i < data.qa_content.length; i++) {
+              var vehicle = data.qa_content[i];
+              btnsTypesHtml +=
+                '<button type="button" class="btn btn-primary btn-lg mb-2" onclick="setVehicle(\'' +
+                vehicle.name +
+                "','" +
+                vehicle.amount +
+                "')\">" +
+                vehicle.name +
+                ' <i class="fa fa-car-side"></i>' +
+                "</button>";
+            }
+            $("#btnsTypes").html(btnsTypesHtml);
+          },
+          complete: function (data) {
+            // loading(false);
+          },
+        });
+      }
+
+      function setVehicle(name, amount) {
+        glbVehicleName = name;
+        glbVehicleAmount = amount;
+      }
+
+      function saveVehicle() {
+        if (
+          glbVehicleName == null ||
+          glbVehicleAmount == null ||
+          $("#numberCar2").val() === null
+        ) {
+          $("#msjModalTitle").html(
+            "Seleccione el tipo de vehiculo y coloque el numero de placa"
+          );
+          $("#msjModalSubTitle").html("");
+          $("#msjModal").modal("show");
+          $("#numberCar2").focus();
+        } else {
+          $.ajax({
+            url: "./api/vehicle",
+            type: "POST", //el método post o get del formulario
+            data: {
+              number: $("#numberCar2").val(),
+              type: glbVehicleName,
+              amount: glbVehicleAmount,
+            },
+            headers: { token: tokenGlb },
+            beforeSend: function () {
+              loading(true);
+            },
+            error: function (data) {
+              console.log("error");
+              console.log(data);
+            },
+            success: function (data) {
+              console.log(data);
+              validateSession(data);
+              if (data.cd == "ok") {
+                $("#msjModalTitle").html("Vehiculo Creado");
+                $("#msjModal").modal("show");
+              } else {
+                $("#msjModalTitle").html("Problemas al crear el vehiculo");
+                $("#msjModal").modal("show");
+              }
+            },
+            complete: function (data) {
+              loading(false);
+              glbVehicleName = null;
+              glbVehicleAmount = null;
+              $("#msjModalNew").modal("hide");
+              document.getElementById("ticketFrm").reset();
+            },
+          });
+        }
+      }
+    </script>
     <!-- //Footer -->
     <%- include('./footer')-%>
     <!-- //Footer -->
