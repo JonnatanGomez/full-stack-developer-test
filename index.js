@@ -38,9 +38,15 @@ app.use(methodOverride());
 var confi = require("./conf");
 var middlewere = require("./middleware");
 var muser = require("./models/muser");
+var mticket = require("./models/mticket");
+var mvehicle = require("./models/mvehicle");
+var mvehiclestype = require("./models/mvehicletype");
 
 //CONTROLLERS
 var c_user = require("./controllers/c_user");
+var c_ticket = require("./controllers/c_ticket");
+var c_vehicle = require("./controllers/c_vehicle");
+var c_vehicle_type = require("./controllers/c_vehicle_type");
 
 //ROUTES
 var router = express.Router();
@@ -62,12 +68,19 @@ router.get("/views/:dir/:filename", function (req, res) {
 // API routes
 var usrChat = express.Router();
 usrChat.route("/user/").get(c_user.get);
+usrChat
+  .route("/vehicle/")
+  .get(c_vehicle.get)
+  .post(c_vehicle.post)
+  .put(c_vehicle.post);
+
+usrChat.route("/vehicletype/").get(c_vehicle_type.get);
+
+usrChat.route("/ticket/").post(c_ticket.post);
 
 app.use(router);
 
 app.use("/api", middlewere.auth, usrChat);
-var payload = { foo: "bar" };
-var secret = "LssdfnNlOsdCsdsjX";
 
 // Start server
 app.listen(8888, function () {

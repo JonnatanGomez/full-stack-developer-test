@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- //Header -->
+  <%- include('./head')-%>
+  <!-- //Header -->
+  <body>
+    <!-- //Header -->
+    <%- include('./header')-%>
+    <!-- //Header -->
+    <!-- //Session -->
+    <%- include('./prefabs/validateSession.ejs')-%>
+    <!-- //Session -->
+
+    <ul class="nav nav-tabs center">
+      <li class="nav-item">
+        <a
+          data-toggle="tab"
+          class="nav-link active"
+          href="#tab1"
+          id="tab1Factura"
+          >Entrada / Salida</a
+        >
+      </li>
+      <li class="nav-item">
+        <a data-toggle="tab" class="nav-link" href="#tab2" id="tab2Factura"
+          >Acciones</a
+        >
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="tab1" class="tab-pane fade in active show">
+        <div class="margintop" id="tab1Content">
+          <div class="container">
+            <div class="ab-text">
+              <h2 class="green center buttom">
+                REGISTRO DE ENTRADAS Y SALIDAS PLACA
+              </h2>
+              <hr />
+              <div class="row">
+                <div class="col-12">
+                  <form class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                      <input
+                        type="text"
+                        class="form-control form-control-lg"
+                        id="numberCar"
+                        placeholder="NUMERO DE PLACA"
+                      />
+                    </div>
+                    <button type="button" class="btn btn-success btn-lg mb-2">
+                      <i class="fa fa-ticket-alt"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <hr />
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary btn-lg mb-2">
+                  Oficiales <i class="fa fa-car-side"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-lg mb-2">
+                  Residentes <i class="fa fa-car"></i>
+                </button>
+                <button type="button" class="btn btn-primary btn-lg mb-2">
+                  Normales <i class="fa fa-car-alt"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tab2" class="tab-pane fade">
+        <div class="margintop" id="tab1Content">
+          <div class="container">
+            <div class="ab-text">
+              <h5 class="green center buttom">Acciones</h5>
+              <div class="row">
+                <div class="col-12 buttom">
+                  <a
+                    class="col btn btn-lg btn-success white"
+                    href="./reporte.php"
+                  >
+                    Listado de Clientes
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 buttom">
+                  <a class="col btn btn-lg btn-info white" href="./reporte.php">
+                    Reporte de Facturación
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 buttom">
+                  <a
+                    class="col btn btn-lg btn-warning white"
+                    href="./reporte.php"
+                  >
+                    Libro de IVA
+                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //Footer -->
+    <%- include('./footer')-%>
+    <!-- //Footer -->
+  </body>
+</html>

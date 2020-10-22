@@ -1,6 +1,6 @@
 var tools = require("../libraries/tools_dev");
 var msjError = "";
-var debug = false; //muestra o no errores al programador en el servicio
+var debug = true; //muestra o no errores al programador en el servicio
 var objReqLocal = {};
 var varPais = "pais_cl";
 
@@ -109,6 +109,7 @@ exports.get = function (
   }
 
   // colsSel = {};
+  console.log(objFindEnd);
   objMongo.find(objFindEnd, colsSel, function (err, rows) {
     if (rows) {
       var rowsRes = [];

@@ -1,0 +1,11 @@
+<script>
+  $(document).ready(function () {
+    var sessionVal = sessionStorage.getItem("session");
+    console.log("sessionVal");
+    console.log(sessionVal);
+    if (sessionVal === null || sessionVal == false || sessionVal == "null") {
+      console.log("entra");
+      window.location.replace("./index.ejs");
+    }
+  });
+</script>

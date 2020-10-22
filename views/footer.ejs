@@ -149,7 +149,6 @@
       closeSession();
     }
   }
-
   function closeSession() {
     sessionStorage.setItem("idPais", null);
     sessionStorage.setItem("token", null);
@@ -168,6 +167,14 @@
     $("#messageBody").html(body);
     $("#modalMsj").modal("show");
   }
+  showMenu();
+  function showMenu() {
+    if (sessionGlb) {
+      $("#menuSession").show();
+      $("#drop").show();
+      $("#dropBars").show();
+    }
+  }
 </script>
 <!-- ############## TOOLS ################### -->
 <script type="application/javascript">
@@ -182,7 +189,6 @@
 
     return indexed_array;
   }
-
   function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
@@ -192,7 +198,6 @@
     if (!results[2]) return "";
     return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
-
   function loading(show) {
     if (show) {
       $("#loading").show();

@@ -3,6 +3,7 @@
 models/database.js
 
 .history/*
+.vscode/*
 
 # npm
 *.log
@@ -10,4 +11,3 @@ models/database.js
 /package.json
 /package-lock.json
 /node_modules/*
-/node_modules/
